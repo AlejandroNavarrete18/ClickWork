@@ -64,7 +64,7 @@ dependencies {
 
     // Red (Supabase) y mapa
     implementation("com.squareup.okhttp3:okhttp:4.12.0")
-    implementation("org.maplibre.gl:android-sdk:11.8.0")
+    implementation("org.maplibre.gl:android-sdk:13.7.1")
     implementation("androidx.lifecycle:lifecycle-runtime-compose:2.8.7")
     implementation("androidx.compose.material:material-icons-extended")
 
