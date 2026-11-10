@@ -48,7 +48,7 @@ jobs:
 
       - name: Guardar reportes de pruebas y lint
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: reportes
           path: |
@@ -57,7 +57,7 @@ jobs:
           if-no-files-found: ignore
 
       - name: Guardar APK de depuración
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: apk-debug
           path: app/build/outputs/apk/debug/*.apk
