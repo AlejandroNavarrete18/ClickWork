@@ -29,7 +29,7 @@ jobs:
           java-version: '17'
 
       - name: Configurar Gradle (con caché)
-        uses: gradle/actions/setup-gradle@v4
+        uses: gradle/actions/setup-gradle@v6
 
       - name: Dar permisos a Gradle
         run: chmod +x gradlew
