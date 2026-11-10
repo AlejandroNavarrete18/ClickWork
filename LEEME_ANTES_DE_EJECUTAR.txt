@@ -1,0 +1,27 @@
+# ClickWork — paquete limpio para Android Studio
+
+## Importante
+Este paquete elimina artefactos generados (`app/build`, `.gradle` y archivos APK) para evitar reutilizar un `redirect.txt` viejo o incompleto de Android Studio.
+
+## Cómo abrirlo
+1. Extrae TODO el ZIP en una carpeta nueva, por ejemplo `C:\\Users\\alexd\\Downloads\\ClickWork`.
+2. En Android Studio elige **File > Open** y selecciona la carpeta raíz `ClickWork` (la que contiene `settings.gradle.kts`).
+3. Espera a que termine **Gradle Sync**.
+4. Selecciona la configuración `app` y tu emulador/dispositivo.
+5. Presiona **Run**.
+
+## Si vuelve a aparecer “Error loading build artifacts … redirect.txt”
+Cierra Android Studio y ejecuta `LIMPIAR_Y_COMPILAR.bat` desde la carpeta raíz. El script borra únicamente archivos generados y ejecuta `clean assembleDebug`.
+
+También puedes ejecutar desde la terminal de Android Studio:
+```bat
+gradlew.bat --stop
+rmdir /s /q .gradle
+rmdir /s /q app\build
+gradlew.bat clean assembleDebug
+```
+
+## Límites de verificación
+La corrección de `BotonSol` en `MisSolicitudesScreen.kt` está incluida. No fue posible ejecutar Gradle en el entorno de preparación porque no tiene conexión para descargar Gradle desde `services.gradle.org`; por eso este ZIP no se presenta como compilación verificada. El primer Gradle Sync en tu computadora necesitará conexión a Internet si Gradle 8.9 aún no está en caché.
+
+No actualices Android Gradle Plugin durante esta prueba. Conserva la versión declarada en `gradle/libs.versions.toml`.
